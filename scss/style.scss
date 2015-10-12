@@ -1,0 +1,241 @@
+
+@import "../bower_components/normalize-css/normalize.css";
+@import "../bower_components/typeplate-starter-kit/css/typeplate.css";
+
+/**
+ * BOX-SIZING
+ */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+    transition-property: opacity, transform, color, background-color, border-color, z-index, background-image;
+    transition-timing-function: ease;
+}
+
+/**
+ * GRIDS
+ */
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    > * {
+        flex: 1;
+        flex-basis: 100%;
+    }
+}
+
+@define-mixin grid_r $col, $width {
+    @media only screen and (min-width: $(width)px) {
+        .grid-$(col)-$(width) {
+            & > * {
+                flex-basis: calc(100 / $col)%;
+            }
+            @mixin-content;
+        }
+    }
+}
+
+@define-mixin grid $col {
+    .grid-$(col) {
+        & > * {
+            flex-basis: calc(100 / $col)%;
+        }
+        @mixin-content;
+    }
+}
+
+@mixin grid 2 {}
+@mixin grid 4 {}
+@mixin grid 6 {}
+
+@mixin grid_r 2, 400 {}
+@mixin grid_r 2, 800 {}
+
+@mixin grid_r 4, 400 {}
+@mixin grid_r 4, 800 {}
+
+/**
+ * GENERAL
+ */
+
+img {
+    max-width: 100%;
+}
+/**
+ * YOUR CODE HERE
+ */
+#upper-panel{
+    border-bottom: 2px solid #e1e3df;
+    height: 80px;
+
+
+        h2{
+        display:inline-block;
+        margin-left: 130px;
+        line-height: 80px;
+        color: #f56400;
+        font-weight: normal;
+        font-size: 40px;
+
+
+        }
+
+        input{
+        margin-left: 19px;
+        width:261px;
+        height: 33px;
+    }
+}
+
+#listings-container{
+    /*height: 500px;*/
+    width: 100%;
+    text-align: center;
+    margin:0 auto;
+    
+    background-color: #f5f5f1;
+    }
+
+.listing{
+    display:inline-block;
+    border: 1px solid #dddfdc;
+    width:228px;
+    margin:10px;
+    white-space: nowrap;
+    overflow:hidden !important;
+   } 
+
+    .image{
+    width:226px;
+    height: 180px; 
+}
+
+.title{
+    width: 100%;  
+    font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden !important;
+    cursor: pointer;
+    margin:0;
+
+}
+
+.price{
+        margin:0;
+}
+
+
+#shop-icon{
+    max-width: 600px;
+    margin-left: 30px;
+    text-align: left;
+    margin-top: 20px;
+
+
+    img{
+        width:50px;
+        height: 50px; 
+        border: 1px solid #e1e3df;
+        margin-left: 30px;
+        margin-right: 5px;
+
+
+    }
+
+    h4{
+        display: inline-block;
+        top: 50%;
+        transform:translateY(-50%);
+
+    }
+
+}
+
+
+#single-item {
+    display: inline-block;
+    max-width: 570px;
+    border:2px solid #dfdedc;
+    background-color: white;
+    padding: 10px;
+    margin-left: 60px;
+    
+
+
+    #item-img{
+        max-width: 570px;
+        height: 570px;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+        border:1px solid #dfdedc;
+        position: relative;
+
+        /*line-height: 570px;*/
+
+            #leftA:hover>div{
+                opacity: 0.9;
+            }
+
+            #rightA:hover>div{
+                opacity: 0.9;
+            }
+
+            #left-arrow{
+                top:40%;
+                left:0;
+                position: absolute;
+                padding-left: 5px;
+                border-top-right-radius: 10%;
+                border-bottom-right-radius: 10%;
+
+            }
+
+            #right-arrow{
+                top:40%;
+                right:0;
+                position: absolute;
+                padding-left: 20px;
+                border-top-left-radius: 10%;
+                border-bottom-left-radius: 10%;
+
+            }
+
+            .arrow{
+            width: 49%;
+            height: 570px;
+            display: inline-block;
+            font-size: 40px;
+
+
+
+            
+
+            div{
+              width: 42px;
+              height: 82px; 
+              font-size: 30px;
+              font-weight: bold;
+              color: white; 
+              background-color: #7aaaae;
+              line-height: 82px;
+              opacity: 0.4;
+
+
+        }
+
+        div:hover{
+            opacity: 0.9;
+        }
+    }
+}}
+
